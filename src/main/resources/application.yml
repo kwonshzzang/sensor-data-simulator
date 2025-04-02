@@ -13,7 +13,7 @@ spring:
 
 
 application:
-  host: http://localhost:9090
+  host: http://localhost:29093
   url: /sensordata
   tagNumber: 81
   tagList:
