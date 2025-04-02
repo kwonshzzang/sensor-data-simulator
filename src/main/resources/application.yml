@@ -1,0 +1,428 @@
+spring:
+  application:
+    name: sensor-data-simulator
+  lifecycle:
+    timeout-per-shutdown-phase: 15s # 15초 간의 우아한 종료 기간을 정의
+
+  server:
+    port: 9003               # 서버가 연결을 받아들이는 포트
+    shutdown: graceful       # 우아한 종료를 활성화
+    netty:
+      connection-timeout: 2s # 서버와 TCP 연결을 수립하기 위해 기다리는 시간
+      idle-timeout: 15s      # 데이터가 전송되지 않는 경우 TCP 연결을 받기 전에 기다리는 시간
+
+
+application:
+  host: http://localhost:9090
+  url: /sensordata
+  tagNumber: 81
+  tagList:
+    #     0
+    - tag: '320PIC7509:me'
+      path: './data/320PIC7509:me.csv'
+      initialDelay: 0
+      duration: 60000
+    #      1
+    - tag: '320PIC7510:me'
+      path: './data/320PIC7510:me.csv'
+      initialDelay: 200
+      duration: 60000
+    #      2
+    - tag: '320PIC7511:me'
+      path: './data/320PIC7511:me.csv'
+      initialDelay: 400
+      duration: 60000
+    #      3
+    - tag: 'PM3-S3SC.opr:me'
+      path: './data/PM3-S3SC:opr:me.csv'
+      initialDelay: 600
+      duration: 60000
+    #      4
+    - tag: '320PIC7513:me'
+      path: './data/320PIC7513:me.csv'
+      initialDelay: 800
+      duration: 60000
+    #      5
+    - tag: '320PIC7514:me'
+      path: './data/320PIC7514:me.csv'
+      initialDelay: 1000
+      duration: 60000
+    #      6
+    - tag: 'PM3-S5SC.opr:me'
+      path: './data/PM3-S5SC:opr:me.csv'
+      initialDelay: 1200
+      duration: 60000
+    #      7
+    - tag: '320TIC7545:me'
+      path: './data/320TIC7545:me.csv'
+      initialDelay: 1400
+      duration: 60000
+    #    - tag: '320FIA7535:av'
+    #      path: './data/320FIA7535:av.csv'
+    #      initialDelay: 16000
+    #      duration: 60000
+    #      8
+    - tag: '320HIC7501:av'
+      path: './data/320HIC7501:av.csv'
+      initialDelay: 1600
+      duration: 60000
+    #      9
+    - tag: 'PM3_BASIS_WEIGHT_PV'
+      path: './data/PM3_BASIS_WEIGHT_PV.csv'
+      initialDelay: 1800
+      duration: 60000
+    #      10
+    - tag: 'PM3_BASIS_WEIGHT_PV2'
+      path: './data/PM3_BASIS_WEIGHT_PV2.csv'
+      initialDelay: 2000
+      duration: 60000
+    #      11
+    - tag: 'PM3_BASIS_WEIGHT_SP'
+      path: './data/PM3_BASIS_WEIGHT_SP.csv'
+      initialDelay: 2200
+      duration: 60000
+    #      12
+    - tag: 'PM3_BASIS_WEIGHT_SP2'
+      path: './data/PM3_BASIS_WEIGHT_SP2.csv'
+      initialDelay: 2400
+      duration: 60000
+    #      13
+    - tag: 'PM3_MOISTURE_PV'
+      path: './data/PM3_MOISTURE_PV.csv'
+      initialDelay: 2600
+      duration: 60000
+    #      14
+    - tag: 'PM3_MOISTURE_PV2'
+      path: './data/PM3_MOISTURE_PV2.csv'
+      initialDelay: 2800
+      duration: 60000
+    #      15
+    - tag: 'PM3_MOISTURE_SP'
+      path: './data/PM3_MOISTURE_SP.csv'
+      initialDelay: 3000
+      duration: 60000
+    #      16
+    - tag: 'PM3_MOISTURE_SP2'
+      path: './data/PM3_MOISTURE_SP2.csv'
+      initialDelay: 3200
+      duration: 60000
+    #      17
+    - tag: '310LIC4830:con'
+      path: './data/310LIC4830:con.csv'
+      initialDelay: 3400
+      duration: 60000
+    #      18
+    - tag: '382LIC0060:me'
+      path: './data/382LIC0060:me.csv'
+      initialDelay: 3600
+      duration: 60000
+    #      19
+    - tag: '310LIC4021:me'
+      path: './data/310LIC4021:me.csv'
+      initialDelay: 3800
+      duration: 60000
+    #      20
+    - tag: 'PM3_Z_SPREAD2'
+      path: './data/PM3_Z_SPREAD2.csv'
+      initialDelay: 4000
+      duration: 60000
+    #      21
+    - tag: '310CIC4160:me'
+      path: './data/310CIC4160:me.csv'
+      initialDelay: 4200
+      duration: 60000
+    #      22
+    - tag: '320PDC7521:me'
+      path: './data/320PDC7521:me.csv'
+      initialDelay: 4400
+      duration: 60000
+    #      23
+    - tag: '320-PIC5223:me'
+      path: './data/320-PIC5223:me.csv'
+      initialDelay: 4600
+      duration: 60000
+    #      24
+    - tag: '310CIC4501:me'
+      path: './data/310CIC4501:me.csv'
+      initialDelay: 4800
+      duration: 60000
+    #      25
+    - tag: '320FIC0067:con'
+      path: './data/320FIC0067:con.csv'
+      initialDelay: 5000
+      duration: 60000
+    #      26
+    - tag: '320PIC7544:con'
+      path: './data/320PIC7544:con.csv'
+      initialDelay: 5200
+      duration: 60000
+    #      27
+    - tag: '310LIC4820:me'
+      path: './data/310LIC4820:me.csv'
+      initialDelay: 5400
+      duration: 60000
+    #      28
+    - tag: '329-PIC3032:me'
+      path: './data/329-PIC3032:me.csv'
+      initialDelay: 5600
+      duration: 60000
+    #      29
+    - tag: '320FIA8036:av'
+      path: './data/320FIA8036:av.csv'
+      initialDelay: 5800
+      duration: 60000
+    #      30
+    - tag: '320LIC0025:con'
+      path: './data/320LIC0025:con.csv'
+      initialDelay: 6000
+      duration: 60000
+    #      31
+    - tag: '310CIC1001:con'
+      path: './data/310CIC1001:con.csv'
+      initialDelay: 6200
+      duration: 60000
+    #      32
+    - tag: '310LIC4830:me'
+      path: './data/310LIC4830:me.csv'
+      initialDelay: 6400
+      duration: 60000
+    #      33
+    - tag: '320FIC0067:me'
+      path: './data/320FIC0067:me.csv'
+      initialDelay: 6600
+      duration: 60000
+    #      34
+    - tag: '320LIC7524:me'
+      path: './data/320LIC7524:me.csv'
+      initialDelay: 6800
+      duration: 60000
+    #      35
+    - tag: '310LIC4521:me'
+      path: './data/310LIC4521:me.csv'
+      initialDelay: 7000
+      duration: 60000
+    #      36
+    - tag: '383FIA0007:av'
+      path: './data/383FIA0007:av.csv'
+      initialDelay: 7200
+      duration: 60000
+    #      37
+    - tag: '310LIC4110:con'
+      path: './data/310LIC4110:con.csv'
+      initialDelay: 7400
+      duration: 60000
+    #      38
+    - tag: '310PIC5060:con'
+      path: './data/310PIC5060:con.csv'
+      initialDelay: 7600
+      duration: 60000
+    #      39
+    - tag: '381LIC8001:con'
+      path: './data/381LIC8001:con.csv'
+      initialDelay: 7800
+      duration: 60000
+    #     40
+    - tag: '310CIC4840:me'
+      path: './data/310CIC4840:me.csv'
+      initialDelay: 8000
+      duration: 60000
+    #     41
+    - tag: '330TIC2403:av'
+      path: './data/330TIC2403:av.csv'
+      initialDelay: 8200
+      duration: 60000
+    #     42
+    - tag: '310CIC4830:me'
+      path: './data/310CIC4830:me.csv'
+      initialDelay: 8400
+      duration: 60000
+    #     43
+    - tag: '320-PIC5233:me'
+      path: './data/320-PIC5233:me.csv'
+      initialDelay: 8600
+      duration: 60000
+    #     44
+    - tag: '320PIC0060:con'
+      path: './data/320PIC0060:con.csv'
+      initialDelay: 8800
+      duration: 60000
+    #     45
+    - tag: '320TIC8034:con'
+      path: './data/320TIC8034:con.csv'
+      initialDelay: 9000
+      duration: 60000
+    #     46
+    - tag: '310PIA4840:av'
+      path: './data/310PIA4840:av.csv'
+      initialDelay: 9200
+      duration: 60000
+    #     47
+    - tag: '320FIC0058:con'
+      path: './data/320FIC0058:con.csv'
+      initialDelay: 9400
+      duration: 60000
+    #     48
+    - tag: '310PIC4721:me'
+      path: './data/310PIC4721:me.csv'
+      initialDelay: 9600
+      duration: 60000
+    #     49
+    - tag: '310LIC5001:me'
+      path: './data/310LIC5001:me.csv'
+      initialDelay: 9800
+      duration: 60000
+    #     50
+    - tag: '320TIC8034:me'
+      path: './data/320TIC8034:me.csv'
+      initialDelay: 10000
+      duration: 60000
+    #     51
+    - tag: '310LIC4850:con'
+      path: './data/310LIC4850:con.csv'
+      initialDelay: 10200
+      duration: 60000
+    #     52
+    - tag: '310FIC4840:con'
+      path: './data/310FIC4840:con.csv'
+      initialDelay: 10400
+      duration: 60000
+    #     53
+    - tag: '320FIC0058:me'
+      path: './data/320FIC0058:me.csv'
+      initialDelay: 10600
+      duration: 60000
+    #     54
+    - tag: '310LIC4110:me'
+      path: './data/310LIC4110:me.csv'
+      initialDelay: 10800
+      duration: 60000
+    #     55
+    - tag: '310LIC4850:me'
+      path: './data/310LIC4850:me.csv'
+      initialDelay: 11000
+      duration: 60000
+    #     56
+    - tag: '320FIA7531:av'
+      path: './data/320FIA7531:av.csv'
+      initialDelay: 11200
+      duration: 60000
+    #     57
+    - tag: '310CIC1001:me'
+      path: './data/310CIC1001:me.csv'
+      initialDelay: 11400
+      duration: 60000
+    #     58
+    - tag: '310CIC0001:me'
+      path: './data/310CIC0001:me.csv'
+      initialDelay: 11600
+      duration: 60000
+    #     59
+    - tag: '330FFC1152:me'
+      path: './data/330FFC1152:me.csv'
+      initialDelay: 11800
+      duration: 60000
+    #     60
+    - tag: '320TIC8021:con'
+      path: './data/320TIC8021:con.csv'
+      initialDelay: 12000
+      duration: 60000
+    #     61
+    - tag: '320TIC8021:me'
+      path: './data/320TIC8021:me.csv'
+      initialDelay: 12200
+      duration: 60000
+    #     62
+    - tag: '329-SHK0006.1:av'
+      path: './data/329-SHK0006:1:av.csv'
+      initialDelay: 12400
+      duration: 60000
+    #     63
+    - tag: '320TIC8013:con'
+      path: './data/320TIC8013:con.csv'
+      initialDelay: 12600
+      duration: 60000
+    #     64
+    - tag: '310LIC4840:con'
+      path: './data/310LIC4840:con.csv'
+      initialDelay: 12800
+      duration: 60000
+    #     65
+    - tag: '310LIC4840:me'
+      path: './data/310LIC4840:me.csv'
+      initialDelay: 13000
+      duration: 60000
+    #     66
+    - tag: '382LIC3004:con'
+      path: './data/382LIC3004:con.csv'
+      initialDelay: 13200
+      duration: 60000
+    #     67
+    - tag: '310FIC4840:me'
+      path: './data/310FIC4840:me.csv'
+      initialDelay: 13400
+      duration: 60000
+    #     68
+    - tag: '330FFC1252:me'
+      path: './data/330FFC1252:me.csv'
+      initialDelay: 13600
+      duration: 60000
+    #     69
+    - tag: '320TIC8013:me'
+      path: './data/320TIC8013:me.csv'
+      initialDelay: 13800
+      duration: 60000
+    #    70
+    - tag: '320LIC4543:me'
+      path: './data/320LIC4543:me.csv'
+      initialDelay: 14000
+      duration: 60000
+    #     71
+    - tag: 'HFEMS.MRPAP.01.SH02.PM001.01.KW'
+      path: './data/PM00101KW.csv'
+      initialDelay: 14200
+      duration: 60000
+    #     72
+    - tag: 'HFEMS.MRPAP.01.SH02.PM001.01.KWH'
+      path: './data/PM00101KWH.csv'
+      initialDelay: 14400
+      duration: 60000
+    #     73
+    - tag: 'HFEMS.MRPAP.01.SH02.PM001.02.KW'
+      path: './data/PM00102KW.csv'
+      initialDelay: 14600
+      duration: 60000
+    #     74
+    - tag: 'HFEMS.MRPAP.01.SH02.PM001.02.KWH'
+      path: './data/PM00102KWH.csv'
+      initialDelay: 14800
+      duration: 60000
+    #     75
+    - tag: 'HFEMS.MRPAP.01.SH02.PM001.03.KW'
+      path: './data/PM00103KW.csv'
+      initialDelay: 15000
+      duration: 60000
+    #     76
+    - tag: 'HFEMS.MRPAP.01.SH02.PM001.03.KWH'
+      path: './data/PM00103KWH.csv'
+      initialDelay: 15200
+      duration: 60000
+    #     77
+    - tag: 'HFEMS.MRPAP.01.SH01.PL004.01.VAL'
+      path: './data/PL00401VAL.csv'
+      initialDelay: 15400
+      duration: 60000
+    #     78
+    - tag: 'HFEMS.MRPAP.01.SH01.PL004.01.VAL_SUM'
+      path: './data/PL00401VAL_SUM.csv'
+      initialDelay: 15600
+      duration: 60000
+    #     79
+    - tag: 'HFEMS.MRPAP.01.SH01.PL004.01.PRE'
+      path: './data/PL00401PRE.csv'
+      initialDelay: 15800
+      duration: 60000
+    #     80
+    - tag: 'HFEMS.MRPAP.01.SH01.PL004.01.TEMP'
+      path: './data/PL00401TEMP.csv'
+      initialDelay: 16000
+      duration: 60000
